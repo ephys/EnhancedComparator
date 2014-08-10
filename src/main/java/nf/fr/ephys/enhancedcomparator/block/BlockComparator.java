@@ -66,12 +66,4 @@ public class BlockComparator extends BlockRedstoneComparator {
 
 		return null;
 	}
-/* doesn't matter, I overwrote the Blocks entry
-	protected BlockRedstoneDiode getBlockPowered() {
-		return EnhancedComparator.comparator_powered;
-	}
-
-	protected BlockRedstoneDiode getBlockUnpowered() {
-		return EnhancedComparator.comparator_unpowered;
-	}*/
 }

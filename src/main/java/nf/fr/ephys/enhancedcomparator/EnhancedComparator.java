@@ -14,7 +14,7 @@ import nf.fr.ephys.enhancedcomparator.core.comparator.BlockAnvilComparator;
 import nf.fr.ephys.enhancedcomparator.core.comparator.BlockNoteHandler;
 import nf.fr.ephys.enhancedcomparator.core.comparator.ComparatorOverrideRegistry;
 
-@Mod(modid = "enhancedcomparator", version = "0.0.1", dependencies = "CookieCore[1.0.0,)")
+@Mod(modid = "enhancedcomparator", version = "0.0.1", dependencies = "required-after:cookiecore@[1.1.0,)")
 public class EnhancedComparator {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
