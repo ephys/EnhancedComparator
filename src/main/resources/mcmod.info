@@ -1,0 +1,14 @@
+[{
+  "modid": "enhancedcomparator",
+  "name": "Enhanced Comparator",
+  "description": "Adds comparator compatibility to (almost) everything.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["EphysPotato"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}]
