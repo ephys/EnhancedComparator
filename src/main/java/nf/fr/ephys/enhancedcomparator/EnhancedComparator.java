@@ -7,8 +7,11 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemReed;
+import net.minecraft.item.ItemStack;
 import nf.fr.ephys.cookiecore.helpers.RegistryHelper;
+import nf.fr.ephys.enhancedcomparator.api.IComparatorHandler;
 import nf.fr.ephys.enhancedcomparator.block.BlockComparator;
 import nf.fr.ephys.enhancedcomparator.core.comparator.BlockAnvilComparator;
 import nf.fr.ephys.enhancedcomparator.core.comparator.BlockNoteHandler;
@@ -32,7 +35,17 @@ public class EnhancedComparator {
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		IComparatorHandler anvilComparator = new BlockAnvilComparator();
 		ComparatorOverrideRegistry.addOverride(Blocks.noteblock, new BlockNoteHandler());
-		ComparatorOverrideRegistry.addOverride(Blocks.anvil, new BlockAnvilComparator());
+		ComparatorOverrideRegistry.addOverride(Blocks.anvil, );
+
+		ItemStack rcAnvil = RegistryHelper.getItemStack("Railcraft:tile.railcraft.anvil");
+		if (rcAnvil != null && rcAnvil.getItem() instanceof ItemBlock) {
+			Block steelAnvil = ((ItemBlock) rcAnvil.getItem()).field_150939_a;
+
+			ComparatorOverrideRegistry.addOverride(steelAnvil, anvilComparator);
+		} else {
+			LOGGER.info("Failed to load Railcraft's steel anvil. No support for you I guess :(");
+		}
 	}
 }
