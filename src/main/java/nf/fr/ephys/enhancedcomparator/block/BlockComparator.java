@@ -52,17 +52,22 @@ public class BlockComparator extends BlockRedstoneComparator {
 	public static Integer getBlockOverride(World world, int x, int y, int z, int side) {
 		Block block = world.getBlock(x, y, z);
 
-		if (block.hasComparatorInputOverride())
-			return block.getComparatorInputOverride(world, x, y, z, side);
+		try {
+			if (block.hasComparatorInputOverride())
+				return block.getComparatorInputOverride(world, x, y, z, side);
 
-		IComparatorHandler handler = ComparatorOverrideRegistry.getOverride(block);
+			IComparatorHandler handler = ComparatorOverrideRegistry.getOverride(block);
 
-		if (handler != null)
-			return handler.getComparatorInput(block, world, x, y, z, side);
+			if (handler != null)
+				return handler.getComparatorInput(block, world, x, y, z, side);
 
-		TileEntity te = world.getTileEntity(x, y, z);
-		if (te instanceof IInventory)
-			return Container.calcRedstoneFromInventory((IInventory) te);
+			TileEntity te = world.getTileEntity(x, y, z);
+			if (te instanceof IInventory)
+				return Container.calcRedstoneFromInventory((IInventory) te);
+		} catch(Exception e) {
+			EnhancedComparator.LOGGER.error("A mod's comparator input implementation threw an exception ("+x+", "+y+", "+z+").");
+			e.printStackTrace();
+		}
 
 		return null;
 	}

@@ -13,9 +13,13 @@ import nf.fr.ephys.enhancedcomparator.block.BlockComparator;
 import nf.fr.ephys.enhancedcomparator.core.comparator.BlockAnvilComparator;
 import nf.fr.ephys.enhancedcomparator.core.comparator.BlockNoteHandler;
 import nf.fr.ephys.enhancedcomparator.core.comparator.ComparatorOverrideRegistry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = "enhancedcomparator", version = "0.0.1", dependencies = "required-after:cookiecore@[1.1.0,)")
 public class EnhancedComparator {
+	public static Logger LOGGER = LogManager.getLogger("enhancedcomparator");
+
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		Block comparator_powered = new BlockComparator(true).setHardness(0.0F).setStepSound(Block.soundTypeWood).setBlockName("comparator").setBlockTextureName("comparator_on");
