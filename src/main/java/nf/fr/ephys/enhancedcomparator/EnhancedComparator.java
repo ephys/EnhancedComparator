@@ -16,7 +16,7 @@ import nf.fr.ephys.enhancedcomparator.core.comparator.ComparatorOverrideRegistry
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = "enhancedcomparator", version = "0.0.1", dependencies = "required-after:cookiecore@[1.1.0,)")
+@Mod(modid = "enhancedcomparator", version = "0.0.2", dependencies = "required-after:cookiecore@[1.3.0,)")
 public class EnhancedComparator {
 	public static Logger LOGGER = LogManager.getLogger("enhancedcomparator");
 
