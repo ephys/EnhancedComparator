@@ -3,7 +3,7 @@ ext {
     _ec_forge_version = "10.13.2.1286"
 
     _ec_enhancedcomparator_version = "1.3.0"
-    _ec_cookie_version = "1.3.0"
+    _ec_cookie_version = "0.0.2"
 }
 
 buildscript {
