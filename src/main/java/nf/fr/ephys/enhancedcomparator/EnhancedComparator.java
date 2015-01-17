@@ -37,7 +37,7 @@ public class EnhancedComparator {
 	public void postInit(FMLPostInitializationEvent event) {
 		IComparatorHandler anvilComparator = new BlockAnvilComparator();
 		ComparatorOverrideRegistry.addOverride(Blocks.noteblock, new BlockNoteHandler());
-		ComparatorOverrideRegistry.addOverride(Blocks.anvil, );
+		ComparatorOverrideRegistry.addOverride(Blocks.anvil, anvilComparator);
 
 		ItemStack rcAnvil = RegistryHelper.getItemStack("Railcraft:tile.railcraft.anvil");
 		if (rcAnvil != null && rcAnvil.getItem() instanceof ItemBlock) {
